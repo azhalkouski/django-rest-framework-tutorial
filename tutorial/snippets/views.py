@@ -8,12 +8,16 @@ from rest_framework.response import Response
 from rest_framework.reverse import reverse
 
 
-@api_view(['GET'])
-def api_root(request, format=None):
-    return Response({
-        'users': reverse('user-list', request=request, format=format),
-        'snippets': reverse('snippet-list', request=request, format=format)
-    })
+"""
+The DefaultRouter class we're using also automatically creates the API root
+for us, so we can now delte the `api_root` method from our `views` module.
+"""
+# @api_view(['GET'])
+# def api_root(request, format=None):
+#     return Response({
+#         'users': reverse('user-list', request=request, format=format),
+#         'snippets': reverse('snippet-list', request=request, format=format)
+#     })
 
 
 """===== Class-based views using generic class-based views ====="""
